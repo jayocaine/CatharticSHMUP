@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SquareMove : MonoBehaviour
+public class SquareMove : MonoBehaviour , IPooledObject
 {
     public static float spawnSpeed = 2f;
     public Rigidbody2D rb;
@@ -35,7 +35,7 @@ public class SquareMove : MonoBehaviour
     {
       
     }
-    private void FixedUpdate()
+    public void OnObjectSpawn()
     {
         rb.velocity = Vector2.down * spawnSpeed;
         //Debug.Log(sqspwn.randomSpeed);

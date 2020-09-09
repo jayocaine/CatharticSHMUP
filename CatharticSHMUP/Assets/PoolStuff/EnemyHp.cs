@@ -8,7 +8,12 @@ public class EnemyHp : MonoBehaviour
     public  event EventHandler OnEnemyKilled;   
     public UnityEngine.GameObject bullet;
     public int hp = 3;
+    ObjectPooler objectPooler;
 
+    private void Start()
+    {
+        objectPooler = ObjectPooler.Instance;
+    }
     private void Awake()
     {
         hp = 3;
@@ -17,6 +22,7 @@ public class EnemyHp : MonoBehaviour
     {
         if (hp == 0)
         {
+            //objectPooler.poolDictionary[tag].Dequeue();
             Destroy(gameObject);
             OnEnemyKilled?.Invoke(this, EventArgs.Empty);
         }
