@@ -1,13 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Policy;
 using UnityEngine;
 
 public class ShootingScript : MonoBehaviour
 {
+    public static ShootingScript instance;
+    
     public Transform firePoint;
     public UnityEngine.GameObject bulletPrefab;
     public float bulletForce = 20f;
+    public ObjectPool bulletPool;
     // Update is called once per frame
+
+    private void Awake()
+    {
+        instance = this;
+    }
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
@@ -17,9 +26,7 @@ public class ShootingScript : MonoBehaviour
     }
     void Shoot()
     {
-        UnityEngine.GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+        bulletPool.SpawnObject(firePoint.position, firePoint.rotation);       
     }
 }
 

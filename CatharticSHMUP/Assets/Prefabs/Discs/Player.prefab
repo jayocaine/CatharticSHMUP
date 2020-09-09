@@ -197,6 +197,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 2963594077900021047, guid: 9947fbf498e42b2448f2ff8259020cb7,
     type: 3}
   bulletForce: 20
+  bulletPool: {fileID: 6669323738538121380, guid: 833fff65a8590994a816b2af52ce01e6,
+    type: 3}
 --- !u!1 &7561876021411400301
 GameObject:
   m_ObjectHideFlags: 0
