@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7412815591496087543}
   - component: {fileID: 7412815591496087540}
-  - component: {fileID: 4557806403523613073}
   m_Layer: 0
   m_Name: CircleSpawner
   m_TagString: Untagged
@@ -39,7 +38,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7412815591496087541}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3a3049beec935a42a8a8ca70e5d0bb6, type: 3}
   m_Name: 
@@ -49,15 +48,3 @@ MonoBehaviour:
   circleSpawner: {fileID: 7412815591496087543}
   spawnSpeed: 5
   spawnTimer: 5
---- !u!114 &4557806403523613073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7412815591496087541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e52c3af3febd4d4eb33420637c192e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
