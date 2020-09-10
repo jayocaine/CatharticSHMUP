@@ -5,14 +5,14 @@ using UnityEngine;
 public class BallMove : MonoBehaviour
 {
     
-    public static float spawnSpeed = 5f;
+    public static float spawnSpeed = 1f;
     public Rigidbody2D rb;
     private static int killCount;
     EnemyHp enemyHp;
 
     private void Update()
     {
-        if (killCount > 10)
+        if (killCount > 20)
         {
             spawnSpeed += 2;
         }

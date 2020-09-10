@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7566125886940931591}
   - component: {fileID: 1991751751287546498}
+  - component: {fileID: 5488533717445460269}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -50,3 +51,19 @@ MonoBehaviour:
   spawnTimer: 0
   enemyPool: {fileID: 3871220851595047777, guid: 3260e8e2f041eb141a183cdf473f6dc8,
     type: 3}
+  enemyHp: {fileID: 5488533717445460269}
+--- !u!114 &5488533717445460269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3207074160831951052}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca24a9c823138194dbc85112daea8960, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 0}
+  hp: 3
+  miniBulletPool: {fileID: 0}

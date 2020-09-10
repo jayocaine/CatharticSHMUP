@@ -7,7 +7,7 @@ public class EnemyHp : MonoBehaviour
 {
     public static EnemyHp instance;
 
-    public  event EventHandler OnEnemyKilled;   
+    public event EventHandler OnEnemyKilled;   
     public UnityEngine.GameObject bullet;
     public int hp = 3;
     ObjectPool enemyPool;
@@ -15,20 +15,26 @@ public class EnemyHp : MonoBehaviour
         
 
     private void Awake()
-    {
-        hp = 3;
+    {      
         instance = this;
+        
     }
     private void Update()
     {
         if (hp == 0)
         {
-            CircleSpawner.instance.enemyPool.ReturnObject(gameObject);
+            
             miniBulletPool.SpawnObject(transform.position, transform.rotation);
             miniBulletPool.SpawnObject(transform.position, transform.rotation);
             miniBulletPool.SpawnObject(transform.position, transform.rotation);
             miniBulletPool.SpawnObject(transform.position, transform.rotation);
+
+            HpReset();           
+            //spawn minibullets
+            
+            //trigger event
             OnEnemyKilled?.Invoke(this, EventArgs.Empty);
+
         }
     } 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -41,10 +47,17 @@ public class EnemyHp : MonoBehaviour
         {
             CircleSpawner.instance.enemyPool.ReturnObject(gameObject);
             miniBulletPool.ReturnObject(collision.gameObject);
+            hp = 3;
         }
         if (collision.gameObject.tag == "Boarder")
         {
-            CircleSpawner.instance.enemyPool.ReturnObject(gameObject);           
+            CircleSpawner.instance.enemyPool.ReturnObject(gameObject);
+            hp = 3;
         }
+    }
+    public void HpReset()
+    {
+        hp = 3;
+        CircleSpawner.instance.enemyPool.ReturnObject(gameObject);
     }
 }
